@@ -4,4 +4,4 @@ Inizio attività creando progetto KiCad e codice Arduino per creazione di circuit
 
 12/02/2019
 
-Creazione codice alternativo Arduino per utilizzo di pulsante come Switch IO bistabile
+Creazione codice alternativo Arduino per utilizzo di pulsante come Switch IO bistabile e utilizzo di LED per segnalazione modalità di funzionamento
