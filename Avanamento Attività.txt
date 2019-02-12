@@ -1,3 +1,7 @@
 11/02/2019
 
 Inizio attività creando progetto KiCad e codice Arduino per creazione di circuito di comando per due Servomotori con potenziometro di angolo e pulsante per spostamento in posizione ZERO
+
+12/02/2019
+
+Creazione codice alternativo Arduino per utilizzo di pulsante come Switch IO bistabile

@@ -6,23 +6,31 @@ Servo Servo2;
 
 int potpin = 0;
 int val;
-int button = 2;
-int oldstate = 0;
+int buttonPin = 2;
+int lastState = 0;
+int buttonState = 0;
 
 void setup() {
   Servo1.attach (8);
   Servo2.attach (7);
   Serial.begin(9600);
-  pinMode(button, INPUT);
+  pinMode(buttonPin, INPUT);
 
 }
 
 void loop() {
+  int state = digitalRead(buttonPin);
+  if (state == HIGH && state != lastState) {
+
+    buttonState = !buttonState;
+  }
+
+  lastState = state;
   val = analogRead(potpin);
-  int buttonstate = digitalRead(button);
   val = map(val, 0, 1023, 0, 179);
   Serial.println(val);
-  if (buttonstate == 1 && buttonstate != oldstate) {
+
+  if (buttonState == 1) {
 
     Servo1.write(0);
     Servo2.write(0);
@@ -31,9 +39,7 @@ void loop() {
     Servo1.write(val);
     Servo2.write(179 - val);
   }
-  oldstate = buttonstate;
-
   delay(15);
-
-
 }
+
+
